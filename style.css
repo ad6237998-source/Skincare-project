@@ -177,3 +177,68 @@ footer .copyright { font-size: 11px; margin-top: 15px; }
     padding: 22px 18px;
   }
 }
+/* =====================================
+   FEATURE 2: PRODUCT SEARCH & FILTER
+===================================== */
+
+.product-search {
+  max-width: 800px;
+  margin: 0 auto 35px;
+  padding: 24px;
+  background: var(--white);
+  border: 1px solid #ECE9E0;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px #34483A10;
+}
+
+.product-search label {
+  display: block;
+  margin: 12px 0 8px;
+  color: var(--forest);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.product-search input,
+.product-search select {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  color: var(--charcoal);
+  background: var(--ivory);
+  border: 1px solid #DFE3DA;
+  border-radius: 10px;
+  font: inherit;
+  outline: none;
+}
+
+.product-search input:focus,
+.product-search select:focus {
+  border-color: var(--sage);
+  box-shadow: 0 0 0 3px #A8B5A033;
+}
+
+#searchMessage {
+  margin-top: 15px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Hide products that do not match the search */
+
+.product-card[hidden] {
+  display: none !important;
+}
+
+/* Mobile responsive design */
+
+@media (max-width: 420px) {
+  .product-search {
+    padding: 20px 16px;
+  }
+
+  .product-search input,
+  .product-search select {
+    padding: 12px;
+  }
+}

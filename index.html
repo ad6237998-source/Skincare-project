@@ -128,6 +128,28 @@
         <h2>Simple steps, <span>happy skin.</span></h2>
         <p>Start with the basics before adding more products.</p>
       </div>
+      <!-- FEATURE 2: PRODUCT SEARCH AND FILTER -->
+
+<div class="product-search">
+  <label for="productSearch">Search Products</label>
+
+  <input
+    type="text"
+    id="productSearch"
+    placeholder="Search cleanser, moisturizer, sunscreen..."
+  >
+
+  <label for="categoryFilter">Filter by Category</label>
+
+  <select id="categoryFilter">
+    <option value="all">All Categories</option>
+    <option value="cleanser">Cleanser</option>
+    <option value="moisturizer">Moisturizer</option>
+    <option value="sunscreen">Sunscreen</option>
+  </select>
+
+  <p id="searchMessage" aria-live="polite"></p>
+</div>
       <div class="product-grid">
   <article class="product-card" data-category="cleanser">
     <div class="product-emoji">🫧</div>

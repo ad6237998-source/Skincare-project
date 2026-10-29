@@ -169,3 +169,53 @@ if (suggestButton && suggestionResults) {
     });
   });
 }
+/* =====================================
+   FEATURE 2: PRODUCT SEARCH & FILTER
+===================================== */
+
+const productSearch = document.getElementById("productSearch");
+const categoryFilter = document.getElementById("categoryFilter");
+const searchMessage = document.getElementById("searchMessage");
+
+if (productSearch && categoryFilter && searchMessage) {
+  const productCards = document.querySelectorAll(
+    ".product-grid .product-card"
+  );
+
+  function filterProducts() {
+    const searchText = productSearch.value.toLowerCase().trim();
+    const selectedCategory = categoryFilter.value;
+
+    let visibleCount = 0;
+
+    productCards.forEach(function (card) {
+      const cardText = card.textContent.toLowerCase();
+      const cardCategory = card.dataset.category;
+
+      const matchesSearch = cardText.includes(searchText);
+
+      const matchesCategory =
+        selectedCategory === "all" ||
+        cardCategory === selectedCategory;
+
+      const isVisible = matchesSearch && matchesCategory;
+
+      card.hidden = !isVisible;
+
+      if (isVisible) {
+        visibleCount++;
+      }
+    });
+
+    searchMessage.textContent =
+      visibleCount +
+      (visibleCount === 1
+        ? " product found."
+        : " products found.");
+  }
+
+  productSearch.addEventListener("input", filterProducts);
+  categoryFilter.addEventListener("change", filterProducts);
+
+  filterProducts();
+}
