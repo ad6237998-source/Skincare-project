@@ -80,3 +80,92 @@ skinForm.addEventListener("submit", function (event) {
   result.hidden = false;
   result.scrollIntoView({ behavior: "smooth", block: "nearest" });
 });
+/* FEATURE 1: PRODUCT SUGGESTION */
+
+const suggestButton = document.getElementById("suggestButton");
+const suggestionResults = document.getElementById("suggestionResults");
+
+if (suggestButton && suggestionResults) {
+  suggestButton.addEventListener("click", function () {
+    const selectedSkinType =
+      document.getElementById("suggestSkinType").value;
+
+    const selectedConcern =
+      document.getElementById("suggestConcern").value;
+
+    const products = [
+      {
+        name: "Gentle Cleanser",
+        category: "Cleanser",
+        skinTypes: ["oily", "dry", "combination", "normal", "sensitive"],
+        concerns: ["acne", "dryness", "dullness", "sensitivity", "maintenance"],
+        description: "A gentle cleanser for everyday use."
+      },
+      {
+        name: "Lightweight Moisturizer",
+        category: "Moisturizer",
+        skinTypes: ["oily", "combination", "normal"],
+        concerns: ["acne", "dullness", "maintenance"],
+        description: "Helps keep skin hydrated without a heavy feel."
+      },
+      {
+        name: "Hydrating Moisturizer",
+        category: "Moisturizer",
+        skinTypes: ["dry", "sensitive", "normal"],
+        concerns: ["dryness", "sensitivity", "maintenance"],
+        description: "Helps support skin hydration."
+      },
+      {
+        name: "Broad-Spectrum Sunscreen",
+        category: "Sunscreen",
+        skinTypes: ["oily", "dry", "combination", "normal", "sensitive"],
+        concerns: ["acne", "dryness", "dullness", "sensitivity", "maintenance"],
+        description: "Choose a suitable broad-spectrum SPF 30+ sunscreen."
+      }
+    ];
+
+    const matchedProducts = products.filter(function (product) {
+      const skinMatches =
+        selectedSkinType === "all" ||
+        product.skinTypes.includes(selectedSkinType);
+
+      const concernMatches =
+        selectedConcern === "all" ||
+        product.concerns.includes(selectedConcern);
+
+      return skinMatches && concernMatches;
+    });
+
+    suggestionResults.replaceChildren();
+
+    const heading = document.createElement("h3");
+    heading.textContent = "Your Product Suggestions ✨";
+    suggestionResults.appendChild(heading);
+
+    if (matchedProducts.length === 0) {
+      suggestionResults.textContent =
+        "No matching products found. Try different options.";
+      return;
+    }
+
+    matchedProducts.forEach(function (product) {
+      const card = document.createElement("div");
+      card.className = "suggested-product";
+
+      const name = document.createElement("h3");
+      name.textContent = product.name;
+
+      const category = document.createElement("p");
+      category.textContent = "Category: " + product.category;
+
+      const description = document.createElement("p");
+      description.textContent = product.description;
+
+      card.appendChild(name);
+      card.appendChild(category);
+      card.appendChild(description);
+
+      suggestionResults.appendChild(card);
+    });
+  });
+}

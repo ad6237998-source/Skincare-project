@@ -15,6 +15,7 @@
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#routine">Routine</a>
+      <a href="#suggestions">Suggestions</a>
       <a href="#products">Products</a>
     </nav>
     <a href="#routine" class="nav-button">Get Started ↗</a>
@@ -85,6 +86,41 @@
         <p class="disclaimer">Educational guidance only. This tool does not diagnose skin conditions.</p>
       </div>
     </section>
+    <!-- NEW FEATURE 1: PRODUCT SUGGESTION -->
+    <section class="suggestion-section" id="suggestions">
+      <div class="section-heading">
+        <span class="tag">MADE FOR YOUR SKIN</span>
+        <h2>Find your <span>perfect match.</span></h2>
+        <p>Choose your skin type and concern to explore products.</p>
+      </div>
+
+      <div class="suggestion-card">
+        <label for="suggestSkinType">Skin Type</label>
+        <select id="suggestSkinType">
+          <option value="all">All skin types</option>
+          <option value="oily">Oily</option>
+          <option value="dry">Dry</option>
+          <option value="combination">Combination</option>
+          <option value="normal">Normal</option>
+          <option value="sensitive">Sensitive</option>
+        </select>
+
+        <label for="suggestConcern">Skin Concern</label>
+        <select id="suggestConcern">
+          <option value="all">All concerns</option>
+          <option value="acne">Acne and breakouts</option>
+          <option value="dryness">Dryness</option>
+          <option value="dullness">Dullness</option>
+          <option value="sensitivity">Sensitivity</option>
+          <option value="maintenance">General maintenance</option>
+        </select>
+
+        <button type="button" class="button primary"
+          id="suggestButton">Suggest Products ✨</button>
+
+        <div id="suggestionResults" aria-live="polite"></div>
+      </div>
+    </section>
 
     <section class="products-section" id="products">
       <div class="section-heading">
@@ -93,12 +129,29 @@
         <p>Start with the basics before adding more products.</p>
       </div>
       <div class="product-grid">
-        <article class="product-card"><div class="product-emoji">🫧</div><span class="product-label">STEP 01</span><h3>Gentle Cleanser</h3><p>Helps remove everyday dirt, oil, and impurities.</p></article>
-        <article class="product-card"><div class="product-emoji">💧</div><span class="product-label">STEP 02</span><h3>Moisturizer</h3><p>Helps maintain skin hydration and support the skin barrier.</p></article>
-        <article class="product-card"><div class="product-emoji">☀️</div><span class="product-label">STEP 03</span><h3>Sunscreen</h3><p>Broad-spectrum SPF 30 or higher helps protect against UV rays.</p></article>
-      </div>
-    </section>
+  <article class="product-card" data-category="cleanser">
+    <div class="product-emoji">🫧</div>
+    <span class="product-label">STEP 01</span>
+    <h3>Gentle Cleanser</h3>
+    <p>Helps remove everyday dirt, oil, and impurities.</p>
+  </article>
 
+  <article class="product-card" data-category="moisturizer">
+    <div class="product-emoji">💧</div>
+    <span class="product-label">STEP 02</span>
+    <h3>Moisturizer</h3>
+    <p>Helps maintain skin hydration.</p>
+  </article>
+
+  <article class="product-card" data-category="sunscreen">
+    <div class="product-emoji">☀️</div>
+    <span class="product-label">STEP 03</span>
+    <h3>Sunscreen</h3>
+    <p>Broad-spectrum SPF 30 or higher helps protect against UV rays.</p>
+  </article>
+</div>
+    </section>
+    
     <section class="quote-section"><span>🌷</span><h2>Skincare is self-care.</h2><p>Consistency matters more than having a shelf full of products.</p><a href="#routine" class="button primary">Find My Routine →</a></section>
   </main>
 

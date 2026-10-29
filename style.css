@@ -103,3 +103,77 @@ footer .copyright { font-size: 11px; margin-top: 15px; }
   .hero-buttons .button { width: 100%; }
   .quote-section h2 { font-size: 29px; }
 }
+/* FEATURE 1: PRODUCT SUGGESTION */
+
+.suggestion-section {
+  padding: 80px 8%;
+  background: var(--ivory);
+}
+
+.suggestion-card {
+  max-width: 600px;
+  margin: auto;
+  padding: 30px;
+  background: var(--white);
+  border: 1px solid #ECE9E0;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px #34483A10;
+}
+
+.suggestion-card label {
+  display: block;
+  margin: 18px 0 8px;
+  color: var(--forest);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.suggestion-card select {
+  width: 100%;
+  padding: 14px;
+  color: var(--charcoal);
+  background: var(--ivory);
+  border: 1px solid #DFE3DA;
+  border-radius: 10px;
+}
+
+.suggestion-card select:focus {
+  outline: 2px solid var(--sage);
+}
+
+.suggestion-card button {
+  width: 100%;
+  margin-top: 22px;
+}
+
+#suggestionResults {
+  margin-top: 24px;
+}
+
+.suggested-product {
+  padding: 18px;
+  margin-top: 12px;
+  background: #EEF3EA;
+  border: 1px solid #D9E2D3;
+  border-radius: 12px;
+}
+
+.suggested-product h3 {
+  color: var(--forest);
+  font-size: 17px;
+}
+
+.suggested-product p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+@media (max-width: 420px) {
+  .suggestion-section {
+    padding: 55px 7%;
+  }
+
+  .suggestion-card {
+    padding: 22px 18px;
+  }
+}
